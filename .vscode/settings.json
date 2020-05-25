@@ -1,0 +1,6 @@
+{
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "/Users/wale/Desktop/mongo-java-driver-3.12.4.jar"
+    ]
+}
