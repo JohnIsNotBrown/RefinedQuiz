@@ -1,3 +1,5 @@
+package src;
+
 public class Question {
     //instance variables
     private String question;

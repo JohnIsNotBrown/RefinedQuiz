@@ -1,3 +1,5 @@
+package src;
+
 import java.util.ArrayList; //using an arraylist to add questions
 
 public class Questions {

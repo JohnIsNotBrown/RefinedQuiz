@@ -1,4 +1,4 @@
-package RefinedQuiz.src.main.java.pack;
+package src.RefinedQuiz.src.main.java.fds;
 
 /**
  * Hello world!
