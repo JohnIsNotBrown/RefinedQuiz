@@ -25,6 +25,6 @@ public class Person {
         
     //toString method that returns the values as a string
     public String toString(){
-        return "Name: " + getName() + " Age: " + getAge() + " Score: " + getScore() + "/5"; 
+        return "Name: " + getName() + " Age: " + getAge() + " Score: " + getScore() + "/10"; 
     }
 }

@@ -1,6 +1,8 @@
 package src;
 
 import java.util.*;
+import com.mongodb.*;
+import java.util.logging.*;
 
 public class CompSciQuiz {
     static Scanner input = new Scanner(System.in);
@@ -10,6 +12,8 @@ public class CompSciQuiz {
     static boolean repeat = false; //Used to repeatedly print menu until user exits
     public static void main(String [] args)
     {
+        Database work = new Database();
+        
         allQuestions(question);
         System.out.println("Welcome to the Computer Science Knowledge Tester");
         System.out.println("------------------------------------------------");
@@ -19,14 +23,17 @@ public class CompSciQuiz {
         System.out.println("Please enter your name and age (seperated by space)");
         String name = input.next();
         int age = input.nextInt();
+    
         System.out.println("Hello " + name + ", the quiz is starting now");
         System.out.println("------------------");
         displayQuestions();
         
         //do we want the people to be in an array? or is that where the database will come in?
         Person person = new Person(name, age, score);
+        System.out.println();
         System.out.println(person);
-
+        work.callme(name, age, person.getScore()); //adds the students score to the database collection
+       
         //Calls method to display menu 
         while(!repeat)
         {
@@ -76,11 +83,18 @@ public class CompSciQuiz {
     //Method that contains questions
     public static void allQuestions(Questions question)
     {
-        question.add(new Question("The sky is blue", 'T'));
-        question.add(new Question("Youngboy is great", 'T'));
-        question.add(new Question("There are two types of loops in java", 'T'));
-        question.add(new Question("Java is object oriented", 'F'));
-        question.add(new Question("Nigerian jollof rice is terrible", 'T'));
+        question.add(new Question("A stack is also known as a LIFO data structure",'T'));
+        question.add(new Question("The method call Math.pow(3,2) will be equivalent to 6",'F'));
+        question.add(new Question("A linked list is a collection of components called nodes",'T'));
+        question.add(new Question("Encapsulation is a fundamental feature of OOP",'T'));
+        question.add(new Question("The main function is the starting point for execution of a program",'T'));
+        question.add(new Question("Pseudocode is a programming language",'F'));
+        question.add(new Question("N*LOG(N) is the worst running case for Bubble Sort",'F'));
+        question.add(new Question("Merge Sort uses a partition method", 'T'));
+        question.add(new Question("A decimal can be stored in an \"int\" variable",'F'));
+
+
+        question.shuffle(); //shuffling the questions around
     }
 
     //static ArrayList <char> personalAnswers;
@@ -109,7 +123,7 @@ public class CompSciQuiz {
     public static void wrongAnswers()
     {
         System.out.println("------------------------------------------------------");
-        System.out.println("With a grade of " + score + "/5");
+        System.out.println("With a grade of " + score + "/10");
         System.out.println("These are the questions you got wrong: ");
         System.out.println();
         while(question.hasNext())

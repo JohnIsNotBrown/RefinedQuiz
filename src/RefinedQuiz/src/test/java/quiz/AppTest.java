@@ -1,4 +1,4 @@
-package src.RefinedQuiz.src.test.java.fds;
+package src.RefinedQuiz.src.test.java.quiz;
 
 // import static org.junit.Assert.assertTrue;
 
@@ -16,8 +16,5 @@ public class AppTest
     // public void shouldAnswerWithTrue()
     // {
     //     assertTrue( true );
-    // }
-    public static void main(String yes){
-
-    }
+    
 }

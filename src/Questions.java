@@ -1,5 +1,6 @@
 package src;
 
+import java.util.Collections;
 import java.util.ArrayList; //using an arraylist to add questions
 
 public class Questions {
@@ -34,5 +35,9 @@ public class Questions {
             current++;
         }
         return null;
+    }
+
+    public void shuffle(){
+        Collections.shuffle(trueFalseQuestions);
     }
 }
