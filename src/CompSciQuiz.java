@@ -10,9 +10,9 @@ public class CompSciQuiz {
     static Questions question = new Questions(10);
     static int score = 0; 
     static boolean repeat = false; //Used to repeatedly print menu until user exits
+    static Database work = new Database();
     public static void main(String [] args)
     {
-        Database work = new Database();
         
         allQuestions(question);
         System.out.println("Welcome to the Computer Science Knowledge Tester");
@@ -56,6 +56,7 @@ public class CompSciQuiz {
         System.out.println("Please select an option");
         int option = input.nextInt(); //Start of switch case that allows user to select from menu
         int selection = option;
+        System.out.println("------------------------------------------------");
         if(selection != 4)
         {
             switch(selection)
@@ -64,10 +65,10 @@ public class CompSciQuiz {
                     wrongAnswers();
                     break;
                 case 2:
-
+                    
                     break;
                 case 3: 
-
+                    findThem();
                     break;
                 default:
                     System.out.println("Wrong input, try again");
@@ -136,5 +137,12 @@ public class CompSciQuiz {
         }
         question.reset();
         System.out.println("------------------------------------------------------");
+    }
+
+    //Method that grabs the name of the 
+    public static void findThem(){
+        System.out.print("Enter the name of the score you want to find: ");
+        String name = input.next();
+        work.findMe(name);
     }
 }
