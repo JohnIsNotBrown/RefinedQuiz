@@ -1,5 +1,6 @@
 # RefinedQuiz
 👨🏾‍💻 A true/false quiz that tests your Computer Science knowledge using Java and MongoDB to store data. No GUI implementation yet.
+
 📝 Questions include information about Object Oriented Programming, Data Structures and Algorithms, Data types, and many more questions to get you prepared for a major in Computer Science or even as a review session!
 
 ### Tech Stack Implemented
