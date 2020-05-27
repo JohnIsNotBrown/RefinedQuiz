@@ -13,7 +13,8 @@ public class CompSciQuiz {
     static Database work = new Database();
     public static void main(String [] args)
     {
-        
+        int[] scores;
+
         allQuestions(question);
         System.out.println("Welcome to the Computer Science Knowledge Tester");
         System.out.println("------------------------------------------------");
@@ -24,7 +25,7 @@ public class CompSciQuiz {
         String name = input.next();
         int age = input.nextInt();
     
-        System.out.println("Hello " + name + ", the quiz is starting now");
+        System.out.println("Hello " + name + ", the quiz is starting now!");
         System.out.println("------------------");
         displayQuestions();
         
@@ -32,7 +33,9 @@ public class CompSciQuiz {
         Person person = new Person(name, age, score);
         System.out.println();
         System.out.println(person);
-        work.callme(name, age, person.getScore()); //adds the students score to the database collection
+        work.callMe(name, age, person.getScore()); //adds the students score to the database collection
+
+
        
         //Calls method to display menu 
         while(!repeat)
@@ -65,7 +68,7 @@ public class CompSciQuiz {
                     wrongAnswers();
                     break;
                 case 2:
-                    
+                    tFive();
                     break;
                 case 3: 
                     findThem();
@@ -93,6 +96,7 @@ public class CompSciQuiz {
         question.add(new Question("N*LOG(N) is the worst running case for Bubble Sort",'F'));
         question.add(new Question("Merge Sort uses a partition method", 'T'));
         question.add(new Question("A decimal can be stored in an \"int\" variable",'F'));
+        question.add(new Question("The greedy choice is always the most optimal choice",'T'));
 
 
         question.shuffle(); //shuffling the questions around
@@ -139,7 +143,15 @@ public class CompSciQuiz {
         System.out.println("------------------------------------------------------");
     }
 
-    //Method that grabs the name of the 
+    //Method that perfoms the function of printing out top 5 scores
+    public static void tFive()
+    {
+        System.out.println("The Top Five scores are: ");
+        System.out.println("------------------------");
+        work.topFive();
+    } 
+
+    //Method that grabs the name of the person the user types in and shows their final score
     public static void findThem(){
         System.out.print("Enter the name of the score you want to find: ");
         String name = input.next();

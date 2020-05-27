@@ -3,6 +3,7 @@
         "lib/**/*.jar",
         "/Users/wale/Desktop/mongo-java-driver-3.12.4.jar"
     ],
+    "peacock.color": "#1857a4",
     "workbench.colorCustomizations": {
         "activityBar.activeBackground": "#1f6fd0",
         "activityBar.activeBorder": "#ee90bb",
@@ -20,6 +21,5 @@
         "titleBar.border": "#1857a4",
         "titleBar.inactiveBackground": "#1857a499",
         "titleBar.inactiveForeground": "#e7e7e799"
-    },
-    "peacock.color": "#1857a4"
+    }
 }
